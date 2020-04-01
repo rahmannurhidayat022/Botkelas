@@ -193,11 +193,14 @@ public class Controller {
         }
     }
     private void handleOneOnOneChats(MessageEvent event) {
+        String fallback = "Petunjuk penggunan Bot:\n" +
+                "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
+                "- Ketikan 'Elearning' untuk masuk ke halaman enroll Mata kuliah kamu.";
 
         if(event.getMessage() instanceof TextMessageContent) {
             handleTextMessage(event);
         } else {
-            replyText(event.getReplyToken(), "Unknown Message");
+            replyText(event.getReplyToken(), fallback);
         }
     }
 
@@ -233,11 +236,21 @@ public class Controller {
 
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
-        if(textMessageContent.getText().toLowerCase().contains("senin")) {
+        if(textMessageContent.getText().toLowerCase().contains("Senin")) {
+            replyText(event.getReplyToken(),"1.Dasar Pemrograman I \n2.Struktur Algoritma dan data I");
+        } else if(textMessageContent.getText().toLowerCase().contains("Selasa")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
-            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("Rabu")) {
+            replyText(event.getReplyToken(),"1.Agama I \n2.Matematika Diskrit");
+        } else if(textMessageContent.getText().toLowerCase().contains("Kamis")) {
+            replyText(event.getReplyToken(),"1.Basis Data I \n2.English Language\n3.Sistem Operasi");
+        } else if(textMessageContent.getText().toLowerCase().contains("Jumat")) {
+            replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
+        } else if(textMessageContent.getText().toLowerCase().contains("Sabtu")) {
+            replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
+        } else if(textMessageContent.getText().toLowerCase().contains("Minggu")) {
+            replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
+        } else if (textMessageContent.getText().toLowerCase().contains("Tugas")) {
             replyFlexMessage(event.getReplyToken());
         } else {
             replyText(event.getReplyToken(), fallback);
