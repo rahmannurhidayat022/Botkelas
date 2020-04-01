@@ -304,6 +304,21 @@ public class Controller {
         }
     }
 
+    private void replyFallback(String replyToken) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("fallback.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("fallback", flexContainer));
+            reply(replyMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void handleTextMessage(MessageEvent event) {
         String fallback = "Petunjuk penggunan Bot:\n" +
                 "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
@@ -330,7 +345,7 @@ public class Controller {
         } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
             replyElearning(event.getReplyToken());
         } else {
-            replyText(event.getReplyToken(), fallback);
+            replyFallback(event.getReplyToken());
         }
     }
 }

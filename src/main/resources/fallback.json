@@ -1,0 +1,92 @@
+{
+  "type": "bubble",
+  "size": "kilo",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Maaf,saya tidak mengerti",
+        "margin": "md",
+        "size": "sm",
+        "align": "center",
+        "offsetBottom": "3px"
+      },
+      {
+        "type": "filler"
+      },
+      {
+        "type": "text",
+        "text": "Lihat jadwal Hari :",
+        "margin": "md",
+        "weight": "bold",
+        "align": "center"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Senin",
+          "text": "senin"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Selasa",
+          "text": "selasa"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Rabu",
+          "text": "rabu"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Kamis",
+          "text": "kamis"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Jum'at",
+          "text": "jumat"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Sabtu",
+          "text": "sabtu"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Minggu",
+          "text": "minggu"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "Lihat Tugas",
+          "text": "tugas"
+        }
+      }
+    ]
+  }
+}
