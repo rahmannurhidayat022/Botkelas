@@ -238,27 +238,20 @@ public class Controller {
     }
 
     private void handleTextMessage(MessageEvent event) {
-        TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
-
-        if(textMessageContent.getText().toLowerCase().contains("senin")) {
-            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        }
-        if(textMessageContent.getText().toLowerCase().contains("selasa")) {
-            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        }
-        else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
-            replyFlexMessage(event.getReplyToken());
-        } else {
-            replyText(event.getReplyToken(), petunjuk(event););
-        }
-    }
-
-    private void petunjuk(MessageEvent event) {
         String fallback = "Petunjuk penggunan Bot:\n" +
                 "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
                 "- Ketikan 'tugas' untuk masuk ke halaman enroll Mata kuliah kamu.";
 
-        replyText(event.getReplyToken(),fallback);
-    }
+        TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
+        if(textMessageContent.getText().toLowerCase().contains("senin")) {
+            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
+        } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
+            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
+        } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
+            replyFlexMessage(event.getReplyToken());
+        } else {
+            replyText(event.getReplyToken(), fallback);
+        }
+    }
 }
