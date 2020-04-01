@@ -214,7 +214,7 @@ public class Controller {
         }
     }
 
-    private void replyFlexMessage(String replyToken) {
+    private void replyElearning(String replyToken) {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
             String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("flex_message.json"));
@@ -222,7 +222,82 @@ public class Controller {
             ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
             FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
 
-            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Submission Dicoding", flexContainer));
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Akses Belajar Online", flexContainer));
+            reply(replyMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void replySenin(String replyToken) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("senin.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Jadwal hari senin", flexContainer));
+            reply(replyMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void replySelasa(String replyToken) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("selasa.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Jadwal hari selasa", flexContainer));
+            reply(replyMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void replyRabu(String replyToken) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("rabu.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Jadwal hari rabu", flexContainer));
+            reply(replyMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void replyKamis(String replyToken) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("kamis.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Jadwal hari kamis", flexContainer));
+            reply(replyMessage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void replyLibur(String replyToken) {
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            String flexTemplate = IOUtils.toString(classLoader.getResourceAsStream("libur.json"));
+
+            ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
+            FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
+
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Jadwal hari libur", flexContainer));
             reply(replyMessage);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -232,26 +307,28 @@ public class Controller {
     private void handleTextMessage(MessageEvent event) {
         String fallback = "Petunjuk penggunan Bot:\n" +
                 "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
-                "- Ketikan 'Elearning' untuk masuk ke halaman enroll Mata kuliah kamu.";
+                "- Ketikan 'tugas' untuk masuk ke halaman enroll Mata kuliah kamu.\n" +
+                "\n" +
+                "Note : Gunakan huruf kecil semua";
 
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
         if(textMessageContent.getText().toLowerCase().contains("senin")) {
-            replyText(event.getReplyToken(),"1.Dasar Pemrograman I \n2.Struktur Algoritma dan data I");
+            replySenin(event.getReplyToken());
         } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
-            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
+            replySelasa(event.getReplyToken());
         } else if(textMessageContent.getText().toLowerCase().contains("rabu")) {
-            replyText(event.getReplyToken(),"1.Agama I \n2.Matematika Diskrit");
+            replyRabu(event.getReplyToken());
         } else if(textMessageContent.getText().toLowerCase().contains("kamis")) {
-            replyText(event.getReplyToken(),"1.Basis Data I \n2.English Language\n3.Sistem Operasi");
+            replyKamis(event.getReplyToken());
         } else if(textMessageContent.getText().toLowerCase().contains("jumat")) {
-            replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
+            replyLibur(event.getReplyToken());
         } else if(textMessageContent.getText().toLowerCase().contains("sabtu")) {
-            replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
+            replyLibur(event.getReplyToken());
         } else if(textMessageContent.getText().toLowerCase().contains("minggu")) {
-            replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
+            replyLibur(event.getReplyToken());
         } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
-            replyFlexMessage(event.getReplyToken());
+            replyElearning(event.getReplyToken());
         } else {
             replyText(event.getReplyToken(), fallback);
         }

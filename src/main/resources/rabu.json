@@ -1,0 +1,73 @@
+{
+  "type": "bubble",
+  "size": "mega",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "HARI RABU",
+        "margin": "md",
+        "size": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "1. 08.00 - 10.00",
+            "size": "md",
+            "contents": [
+              {
+                "type": "span",
+                "text": "10.00 - 12.00"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Dasar Pemrograman II",
+            "contents": [
+              {
+                "type": "span",
+                "text": "Agama I"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "1. 08.00 - 10.00",
+            "size": "md",
+            "contents": [
+              {
+                "type": "span",
+                "text": "13.00 - 15.00"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Dasar Pemrograman II",
+            "contents": [
+              {
+                "type": "span",
+                "text": "Matematika Diskrit"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "spacing": "sm",
+    "margin": "sm"
+  },
+  "styles": {
+    "header": {
+      "backgroundColor": "#ff9922",
+      "separator": true,
+      "separatorColor": "#ff9922"
+    }
+  }
+}
