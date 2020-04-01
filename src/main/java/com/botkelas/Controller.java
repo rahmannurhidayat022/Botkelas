@@ -219,28 +219,28 @@ public class Controller {
             ObjectMapper objectMapper = ModelObjectMapper.createNewObjectMapper();
             FlexContainer flexContainer = objectMapper.readValue(flexTemplate, FlexContainer.class);
 
-            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Dicoding Academy", flexContainer));
+            ReplyMessage replyMessage = new ReplyMessage(replyToken, new FlexMessage("Submission Dicoding", flexContainer));
             reply(replyMessage);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void handleContentMessage(MessageEvent event) {
-        String baseURL     = "https://fiturchatbotjava.herokuapp.com";
-        String contentURL  = baseURL+"/content/"+ event.getMessage().getId();
-        String contentType = event.getMessage().getClass().getSimpleName();
-        String textMsg     = contentType.substring(0, contentType.length() -14)
-                + " yang kamu kirim bisa diakses dari link:\n "
-                + contentURL;
-
-        replyText(event.getReplyToken(), textMsg);
-    }
+//    private void handleContentMessage(MessageEvent event) {
+//        String baseURL     = "https://fiturchatbotjava.herokuapp.com";
+//        String contentURL  = baseURL+"/content/"+ event.getMessage().getId();
+//        String contentType = event.getMessage().getClass().getSimpleName();
+//        String textMsg     = contentType.substring(0, contentType.length() -14)
+//                + " yang kamu kirim bisa diakses dari link:\n "
+//                + contentURL;
+//
+//        replyText(event.getReplyToken(), textMsg);
+//    }
 
     private void handleTextMessage(MessageEvent event) {
         String fallback = "Petunjuk penggunan Bot:\n" +
                 "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
-                "- Ketikan 'tugas' untuk masuk ke halaman enroll Mata kuliah kamu.";
+                "- Ketikan 'Elearning' untuk masuk ke halaman enroll Mata kuliah kamu.";
 
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
@@ -248,7 +248,7 @@ public class Controller {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
         } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
+        } else if (textMessageContent.getText().toLowerCase().contains("Elearning")) {
             replyFlexMessage(event.getReplyToken());
         } else {
             replyText(event.getReplyToken(), fallback);
