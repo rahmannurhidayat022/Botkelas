@@ -233,11 +233,11 @@ public class Controller {
 
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
-        if(textMessageContent.getText().toLowerCase().contains("Senin")) {
+        if(textMessageContent.getText().toLowerCase().contains("senin")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if(textMessageContent.getText().toLowerCase().contains("Selasa")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if (textMessageContent.getText().toLowerCase().contains("Tugas")) {
+        } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
             replyFlexMessage(event.getReplyToken());
         } else {
             replyText(event.getReplyToken(), fallback);
