@@ -1,129 +1,45 @@
 {
   "type": "bubble",
-  "size": "kilo",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F3.bp.blogspot.com%2F-pK9-30jvoZM%2FT1YVKJRx9eI%2FAAAAAAAAADs%2F4yQmapS7tYE%2Fs1600%2FAmazing%2BBeaches%2BWallpapers%2B1600x1200%2BHd%2BWallpapers%2BHD%2Bimages.jpg&f=1&nofb=1",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "150:196",
-            "gravity": "center",
-            "flex": 1
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-9VWTk3LsUrU%2FUAe8GnV6hWI%2FAAAAAAAAHCw%2FATOzf-5b230%2Fs1600%2FHdhut.blogspot.com%252B(12).jpg&f=1&nofb=1",
-                "size": "full",
-                "aspectMode": "cover",
-                "aspectRatio": "150:98",
-                "gravity": "center"
-              },
-              {
-                "type": "image",
-                "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.CMXo7BQVopSb6j5qPaU65QHaEo%26pid%3DApi&f=1",
-                "size": "full",
-                "aspectMode": "cover",
-                "aspectRatio": "150:98",
-                "gravity": "center"
-              }
-            ],
-            "flex": 1
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Info",
-                "size": "xs",
-                "color": "#ffffff",
-                "align": "center",
-                "gravity": "center"
-              }
-            ],
-            "backgroundColor": "#EC3D44",
-            "paddingAll": "2px",
-            "paddingStart": "4px",
-            "paddingEnd": "4px",
-            "flex": 0,
-            "position": "absolute",
-            "offsetStart": "18px",
-            "offsetTop": "18px",
-            "cornerRadius": "100px",
-            "width": "48px",
-            "height": "25px"
-          }
-        ]
-      }
-    ],
-    "paddingAll": "0px"
+  "hero": {
+    "type": "image",
+    "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F5e%2Ff6%2F83%2F5ef68313994aaf68e87d190de943f104.jpg&f=1&nofb=1",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover"
   },
   "body": {
     "type": "box",
     "layout": "vertical",
     "contents": [
       {
+        "type": "text",
+        "text": "Tidak Ada Jadwal",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
         "type": "box",
         "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
         "contents": [
           {
             "type": "box",
-            "layout": "vertical",
+            "layout": "baseline",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
-                "contents": [],
-                "size": "xl",
+                "text": "Gunakan waktu kamu untuk istirahat OK :)",
                 "wrap": true,
-                "text": "Tidak Ada Jadwal",
-                "color": "#ffffff",
-                "weight": "bold"
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
               }
-            ],
-            "spacing": "sm"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "contents": [],
-                    "size": "sm",
-                    "wrap": true,
-                    "margin": "lg",
-                    "color": "#ffffffde",
-                    "text": "Gunakan waktu libur kamu untuk Beristirahat OK :)"
-                  }
-                ]
-              }
-            ],
-            "paddingAll": "13px",
-            "backgroundColor": "#ffffff1A",
-            "cornerRadius": "2px",
-            "margin": "xl"
+            ]
           }
         ]
       }
-    ],
-    "paddingAll": "20px",
-    "backgroundColor": "#464F69"
+    ]
   }
 }
