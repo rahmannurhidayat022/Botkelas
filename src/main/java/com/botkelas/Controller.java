@@ -236,21 +236,21 @@ public class Controller {
 
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
-        if(textMessageContent.getText().toLowerCase().contains("Senin")) {
+        if(textMessageContent.getText().toLowerCase().contains("senin")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman I \n2.Struktur Algoritma dan data I");
-        } else if(textMessageContent.getText().toLowerCase().contains("Selasa")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if(textMessageContent.getText().toLowerCase().contains("Rabu")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("rabu")) {
             replyText(event.getReplyToken(),"1.Agama I \n2.Matematika Diskrit");
-        } else if(textMessageContent.getText().toLowerCase().contains("Kamis")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("kamis")) {
             replyText(event.getReplyToken(),"1.Basis Data I \n2.English Language\n3.Sistem Operasi");
-        } else if(textMessageContent.getText().toLowerCase().contains("Jumat")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("jumat")) {
             replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
-        } else if(textMessageContent.getText().toLowerCase().contains("Sabtu")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("sabtu")) {
             replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
-        } else if(textMessageContent.getText().toLowerCase().contains("Minggu")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("minggu")) {
             replyText(event.getReplyToken(),"Tidak ada jadwal,Gunakan Waktu Kamu untuk Istirahat OK");
-        } else if (textMessageContent.getText().toLowerCase().contains("Tugas")) {
+        } else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
             replyFlexMessage(event.getReplyToken());
         } else {
             replyText(event.getReplyToken(), fallback);
