@@ -3,13 +3,13 @@
   "size": "kilo",
   "hero": {
     "type": "image",
-    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "url": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fevents.unl.edu%2Fimages%2F98945&f=1&nofb=1",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
     "action": {
       "type": "uri",
-      "uri": "http://linecorp.com/"
+      "uri": "https://lms.stmik-amikbandung.ac.id/login/canvas"
     }
   },
   "body": {
@@ -58,8 +58,8 @@
         "height": "sm",
         "action": {
           "type": "uri",
-          "label": "WEBSITE",
-          "uri": "https://www.lms.stmik-amikbandung.ac.id"
+          "label": "LOGIN",
+          "uri": "https://lms.stmik-amikbandung.ac.id/login/canvas"
         }
       },
       {
