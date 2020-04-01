@@ -1,6 +1,6 @@
 {
   "type": "bubble",
-  "size": "mega",
+  "size": "kilo",
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -8,66 +8,29 @@
       {
         "type": "text",
         "text": "HARI SENIN",
-        "margin": "md",
-        "size": "xl"
+        "size": "md",
+        "weight": "bold"
       },
       {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "1. 08.00 - 10.00",
-            "size": "md",
-            "contents": [
-              {
-                "type": "span",
-                "text": "08.00 - 10.00"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "Dasar Pemrograman II",
-            "contents": [
-              {
-                "type": "span",
-                "text": "Dasar Pemrograman II"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "1. 08.00 - 10.00",
-            "size": "md",
-            "contents": [
-              {
-                "type": "span",
-                "text": "10.00 - 12.00"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "Dasar Pemrograman II",
-            "contents": [
-              {
-                "type": "span",
-                "text": "Algoritma Dan Struktur Data II"
-              }
-            ]
-          }
-        ]
+        "type": "text",
+        "text": "08.00 - 10.00",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "Dasar Pemrograman II",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "10.00 - 12.00",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "Algoritma dan Struktur data II",
+        "size": "sm"
       }
-    ],
-    "spacing": "sm",
-    "margin": "sm"
-  },
-  "styles": {
-    "header": {
-      "backgroundColor": "#ff9922",
-      "separator": true,
-      "separatorColor": "#ff9922"
-    }
+    ]
   }
 }

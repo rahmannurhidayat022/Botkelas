@@ -1,6 +1,6 @@
 {
   "type": "bubble",
-  "size": "mega",
+  "size": "kilo",
   "body": {
     "type": "box",
     "layout": "vertical",
@@ -8,87 +8,39 @@
       {
         "type": "text",
         "text": "HARI KAMIS",
-        "margin": "md",
-        "size": "xl"
+        "size": "md",
+        "weight": "bold"
       },
       {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "1. 08.00 - 10.00",
-            "size": "md",
-            "contents": [
-              {
-                "type": "span",
-                "text": "08.00 - 10.00"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "Dasar Pemrograman II",
-            "contents": [
-              {
-                "type": "span",
-                "text": "Basis Data I"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "1. 08.00 - 10.00",
-            "size": "md",
-            "contents": [
-              {
-                "type": "span",
-                "text": "10.00 - 12.00"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "Dasar Pemrograman II",
-            "contents": [
-              {
-                "type": "span",
-                "text": "English Language"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "1. 08.00 - 10.00",
-            "size": "md",
-            "contents": [
-              {
-                "type": "span",
-                "text": "13.00 - 15.00"
-              }
-            ]
-          },
-          {
-            "type": "text",
-            "text": "Dasar Pemrograman II",
-            "contents": [
-              {
-                "type": "span",
-                "text": "Sistem Operasi"
-              }
-            ]
-          }
-        ]
+        "type": "text",
+        "text": "08.00 - 10.00",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "Basis Data I",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "10.00 - 12.00",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "English Language",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "13.00 - 15.00",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "Sistem Operasi",
+        "size": "sm"
       }
-    ],
-    "spacing": "sm",
-    "margin": "sm"
-  },
-  "styles": {
-    "header": {
-      "backgroundColor": "#ff9922",
-      "separator": true,
-      "separatorColor": "#ff9922"
-    }
+    ]
   }
 }
