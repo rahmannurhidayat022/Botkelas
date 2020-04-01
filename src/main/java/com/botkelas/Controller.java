@@ -226,17 +226,6 @@ public class Controller {
         }
     }
 
-//    private void handleContentMessage(MessageEvent event) {
-//        String baseURL     = "https://fiturchatbotjava.herokuapp.com";
-//        String contentURL  = baseURL+"/content/"+ event.getMessage().getId();
-//        String contentType = event.getMessage().getClass().getSimpleName();
-//        String textMsg     = contentType.substring(0, contentType.length() -14)
-//                + " yang kamu kirim bisa diakses dari link:\n "
-//                + contentURL;
-//
-//        replyText(event.getReplyToken(), textMsg);
-//    }
-
     private void handleTextMessage(MessageEvent event) {
         String fallback = "Petunjuk penggunan Bot:\n" +
                 "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
@@ -244,11 +233,11 @@ public class Controller {
 
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
-        if(textMessageContent.getText().toLowerCase().contains("senin")) {
+        if(textMessageContent.getText().toLowerCase().contains("Senin")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if(textMessageContent.getText().toLowerCase().contains("selasa")) {
+        } else if(textMessageContent.getText().toLowerCase().contains("Selasa")) {
             replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
-        } else if (textMessageContent.getText().toLowerCase().contains("Elearning")) {
+        } else if (textMessageContent.getText().toLowerCase().contains("Tugas")) {
             replyFlexMessage(event.getReplyToken());
         } else {
             replyText(event.getReplyToken(), fallback);
