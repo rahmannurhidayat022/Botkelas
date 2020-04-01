@@ -193,13 +193,8 @@ public class Controller {
         }
     }
     private void handleOneOnOneChats(MessageEvent event) {
-        if  (event.getMessage() instanceof AudioMessageContent
-                || event.getMessage() instanceof ImageMessageContent
-                || event.getMessage() instanceof VideoMessageContent
-                || event.getMessage() instanceof FileMessageContent
-        ) {
-            handleContentMessage(event);
-        } else if(event.getMessage() instanceof TextMessageContent) {
+
+        if(event.getMessage() instanceof TextMessageContent) {
             handleTextMessage(event);
         } else {
             replyText(event.getReplyToken(), "Unknown Message");
@@ -210,9 +205,9 @@ public class Controller {
         if(!event.getSource().getUserId().isEmpty()) {
             String userId = event.getSource().getUserId();
             UserProfileResponse profile = getProfile(userId);
-            replyText(event.getReplyToken(), "Hello, " + profile.getDisplayName());
+            replyText(event.getReplyToken(), "Hai, " + profile.getDisplayName());
         } else {
-            replyText(event.getReplyToken(), "Hello, what is your name?");
+            replyText(event.getReplyToken(), "Hai, siapa Nama Kamu?");
         }
     }
 
@@ -245,11 +240,25 @@ public class Controller {
     private void handleTextMessage(MessageEvent event) {
         TextMessageContent textMessageContent = (TextMessageContent) event.getMessage();
 
-        if (textMessageContent.getText().toLowerCase().contains("flex")) {
+        if(textMessageContent.getText().toLowerCase().contains("senin")) {
+            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
+        }
+        if(textMessageContent.getText().toLowerCase().contains("selasa")) {
+            replyText(event.getReplyToken(),"1.Dasar Pemrograman II \n2.Struktur Algoritma dan data II");
+        }
+        else if (textMessageContent.getText().toLowerCase().contains("tugas")) {
             replyFlexMessage(event.getReplyToken());
         } else {
-            replyText(event.getReplyToken(), textMessageContent.getText());
+            replyText(event.getReplyToken(), petunjuk(event););
         }
+    }
+
+    private void petunjuk(MessageEvent event) {
+        String fallback = "Petunjuk penggunan Bot:\n" +
+                "- Ketikan Nama Hari untuk menampilkan jadwal.Contoh 'senin'\n" +
+                "- Ketikan 'tugas' untuk masuk ke halaman enroll Mata kuliah kamu.";
+
+        replyText(event.getReplyToken(),fallback);
     }
 
 }
